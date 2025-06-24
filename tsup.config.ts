@@ -8,7 +8,12 @@ export default defineConfig({
   minify: true,
   sourcemap: false,
   bundle: true,
-  splitting: false, // iife는 이걸 꺼야 함
+  splitting: false,
   treeshake: true,
   dts: false,
+
+  // ✅ 이게 핵심
+  define: {
+    'process.env.NODE_ENV': '"production"',
+  },
 })
