@@ -1,4 +1,3 @@
-// tsup.config.ts
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
@@ -9,6 +8,7 @@ export default defineConfig({
   minify: true,
   sourcemap: false,
   bundle: true,
-  name: 'MyWidget', // 전역으로 노출될 이름 (필수)
+  splitting: false, // iife는 이걸 꺼야 함
+  treeshake: true,
+  dts: false,
 })
-
